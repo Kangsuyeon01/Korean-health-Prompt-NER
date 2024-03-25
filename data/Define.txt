@@ -1,0 +1,3 @@
+Definition: Named entity tags include BodyPart, Symptom, and Disease. Only using these tags, the BIO tagging scheme is applied, where BodyPart is tagged as B-BD and I-BD, Symptom is tagged as B-ST and I-ST, and Disease is tagged as B-DS and I-DS.
+
+Q: Provide an output based on the sample and fill in the blanks to complete the Output
