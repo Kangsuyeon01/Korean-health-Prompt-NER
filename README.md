@@ -10,8 +10,8 @@
 
 - 본 연구는 한국어 헬스케어 분야의 개체명 인식 정확도를 높이기 위해, 형태소 정보를 활용한 Few-Shot 학습 기법과 거대 언어 모델(LLM)의 프롬프트 엔지니어링을 접목한 방법 제안함
 - 한국어의 교착어 특성을 고려하여, BERT와 같은 기존 모델들이 대규모 데이터에 의존하는 한계를 넘어고자 거대언어모델을 통한 개체명인식 방법 제안함
+![image](https://github.com/Kangsuyeon01/Korean-health-Prompt-NER/assets/94098065/252fa130-6e79-4c96-81dd-42f1c1a93d26)
 
-  ![image](https://github.com/Kangsuyeon01/Korean-health-Prompt-NER/assets/94098065/86825fa0-f950-4b83-b267-4ec499d13658)
 ## Dataset
 - 네이버 지식인 정보를 크롤링하여 사용
 - 총 1830개의 문장을 추출하였으며, 개체명의 분류는 질병(DS), 증상(ST), 신체(BD)로 나누어 BIO 태깅 방식 적용
