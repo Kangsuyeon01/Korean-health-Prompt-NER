@@ -23,7 +23,7 @@
 ## Method
 - Prompt 질의를 위해 기존의 개체명 인식 데이터를 새롭게 구축
 ![image](https://github.com/Kangsuyeon01/Korean-health-Prompt-NER/assets/94098065/3a6742f4-f72a-43ba-836a-3a6fefbc350f)
-- 또한, Few-Shot Learning 을 위해 아래와 같이 프롬프트를 구축
+
 - 정의(Definition), 질의(Q),Few-Shot 예시(Sample),입력(Input) 구조
 ![image](https://github.com/Kangsuyeon01/Korean-health-Prompt-NER/assets/94098065/b8555668-c944-4ddf-ac6e-8b3850630d70)
 
@@ -32,16 +32,16 @@
 ![image](https://github.com/Kangsuyeon01/Korean-health-Prompt-NER/assets/94098065/1df6d869-60e7-4949-8113-7a0b7ea9bc6c)
 
 
-1. 형태소 기반 Few-Shot 학습 및 데이터 구축
-  - 헬스케어 관련 데이터를 수집하기 위해 웹 크롤링을 통해  질병, 증상, 신체 부위 
-    등에 대한 문장들을 추출하여 BIO 태깅 진행
+1. __형태소 기반 Few-Shot 학습 및 데이터 구축__
+  - 헬스케어 관련 데이터를 수집하기 위해 웹 크롤링을 통해 `질병`, `증상`, `신체 부위` 
+    등에 대한 문장들을 추출하여 `BIO 태깅` 진행
   - 형태소 정보를 추가하여, 입력 문장에 대한 Few-Shot 학습 데이터 구축
-2. 프롬프트 엔지니어링
-  - 유사도 기반 문서 검색: Sentence BERT를 활용하여 주어진 문장과 유사한 문
-    서를 검색하고, 이를 바탕으로 Few-Shot 프롬프트 구성
-  - 프롬프트 구성: 정의, 질의, Few-Shot 예시, 입력을  포함하는 구조를 통해, 
+2. __프롬프트 엔지니어링__
+  - __유사도 기반 문서 검색__: `Sentence BERT`를 활용하여 주어진 문장과 유사한 문
+    서를 검색하고, 이를 바탕으로 `Few-Shot 프롬프트` 구성
+  - __프롬프트 구성__: 정의, 질의, Few-Shot 예시, 입력을  포함하는 구조를 통해, 
     형태소 정보를 포함한 입력 문장을 LLM에 제공하기 위한 프롬프트를 설계
-  - LLM 질의 및 성능 평가: 구성된 프롬프트를 거대 언어 모델에 질의하여 개체명 
+  - __LLM 질의 및 성능 평가__: 구성된 프롬프트를 거대 언어 모델에 질의하여 개체명 
     인식 결과를 얻고, 각 모델 별 및 Shot의 개수 별로 성능 평가를 진행
 
 
@@ -51,7 +51,7 @@
 - 비교 실험을 위해 사전 학습된 언어 모델인 'bert-base-multilingual-cased'를 활용하여 실험 진행
 - 평가에는 각 개체명 태그에 대한 `F1-Score`를 성능에 대한 평가 지표로 사용
 
-|      | bert-base-multilingual-cased | gpt-3.5-turbo-16k (1-shot)  | gpt-3.5-turbo-16k (2-shot) | gpt-3.5-turbo-16k (5-shot) | gpt-4 (5shot)|
+|      | bert-base-multilingual-cased | gpt-3.5-turbo-16k (1-shot)  | gpt-3.5-turbo-16k (2-shot) | gpt-3.5-turbo-16k (5-shot) | __gpt-4 (5shot)__|
 |------|-------------------------------|-------------------|--------|--------|--------|
 | B-DS | 0.75                          | 0.67              | 0.77   | 0.77   | 0.81   |
 | I-DS | 0.2                           | 0.22              | 0.26   | 0.34   | 0.3    |
